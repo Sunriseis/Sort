@@ -1,43 +1,43 @@
 #include <stdio.h>
-#define MAXL 100		//×î´ó³¤¶È
-typedef int KeyType;	//¶¨Òå¹Ø¼ü×ÖÀàĞÍÎªint
-typedef char InfoType;  // ¿ÉÒÔÊ¹ÓÃËüÀ´ÎªÀàĞÍÈ¡Ò»¸öĞÂµÄÃû×Ö 
+#define MAXL 100		//æœ€å¤§é•¿åº¦
+typedef int KeyType;	//å®šä¹‰å…³é”®å­—ç±»å‹ä¸ºint
+typedef char InfoType;  // å¯ä»¥ä½¿ç”¨å®ƒæ¥ä¸ºç±»å‹å–ä¸€ä¸ªæ–°çš„åå­— å¤šä½™çš„ä»£ç 
 
 typedef struct
-{	KeyType key;		//¹Ø¼ü×ÖÏî--int key 
-	InfoType data;		//ÆäËûÊı¾İÏî£¬ÀàĞÍÎªInfoType--char data 
-} RecType;				//¶¨ÒåÁËÒ»¸ö½á¹¹Ìå£¬Ãû×Ö½ĞRecType£¬Ãû×ÖÊÇ×Ô¼ºÈ¡µÄ¡£ 
+{	KeyType key;		//å…³é”®å­—é¡¹--int key 
+	InfoType data;		//å…¶ä»–æ•°æ®é¡¹ï¼Œç±»å‹ä¸ºInfoType--char data 
+} RecType;				//å®šä¹‰äº†ä¸€ä¸ªç»“æ„ä½“ï¼Œåå­—å«RecTypeï¼Œåå­—æ˜¯è‡ªå·±å–çš„ã€‚ 
 
-void CreateList(RecType R[],KeyType keys[],int n) //´´½¨Ë³Ğò±í --RÊÇÒ»¸öÊı×é£¬Êı×éÄÚµÄÃ¿¸öÔªËØÊÇÒ»¸ö½á¹¹Ìå 
-{	for (int i=0;i<n;i++)			              //R[0..n-1]´æ·ÅÅÅĞò¼ÇÂ¼
+void CreateList(RecType R[],KeyType keys[],int n) //åˆ›å»ºé¡ºåºè¡¨ --Ræ˜¯ä¸€ä¸ªæ•°ç»„ï¼Œæ•°ç»„å†…çš„æ¯ä¸ªå…ƒç´ æ˜¯ä¸€ä¸ªç»“æ„ä½“ 
+{	for (int i=0;i<n;i++)			              //R[0..n-1]å­˜æ”¾æ’åºè®°å½•
 		R[i].key=keys[i];
 }
 
-void DispList(RecType R[],int n)	//Êä³öË³Ğò±í
+void DispList(RecType R[],int n)	//è¾“å‡ºé¡ºåºè¡¨
 {
 	for (int i=0;i<n;i++)
 		printf("%d ",R[i].key);
 	printf("\n");
 }
 
-void BubbleSort(RecType R[],int n)      //RecTyoe´æ·ÅÊı¾İÔªËØ£¬int n´æ·ÅÊı¾İ¸öÊı 
+void BubbleSort(RecType R[],int n)      //RecTyoeå­˜æ”¾æ•°æ®å…ƒç´ ï¼Œint nå­˜æ”¾æ•°æ®ä¸ªæ•° 
 {	int i,j;
 	bool exchange;
 	RecType tmp;
 	for (i=0;i<n-1;i++)                 //0~n-2   1~n-1   9 
 	{	
-		exchange=false;					//Ò»ÌËÇ°exchangeÖÃÎª¼Ù
-		for (j=n-1;j>i;j--)				//¹éÎ»R[i],Ñ­»·n-i-1´Î
-			if (R[j].key<R[j-1].key)	//ÏàÁÚÁ½¸öÔªËØ·´ĞòÊ±
+		exchange=false;					//ä¸€è¶Ÿå‰exchangeç½®ä¸ºå‡
+		for (j=n-1;j>i;j--)				//å½’ä½R[i],å¾ªç¯n-i-1æ¬¡
+			if (R[j].key<R[j-1].key)	//ç›¸é‚»ä¸¤ä¸ªå…ƒç´ ååºæ—¶
 			{	
-				tmp=R[j];				//½«ÕâÁ½¸öÔªËØ½»»»
+				tmp=R[j];				//å°†è¿™ä¸¤ä¸ªå…ƒç´ äº¤æ¢
 				R[j]=R[j-1];
 				R[j-1]=tmp;
-				exchange=true;			//Ò»µ©ÓĞ½»»»£¬exchangeÖÃÎªÕæ
+				exchange=true;			//ä¸€æ—¦æœ‰äº¤æ¢ï¼Œexchangeç½®ä¸ºçœŸ
 			}
 		printf("  i=%d: ",i);
 		DispList(R,n);
-		if (!exchange)  //±¾ÌËÃ»ÓĞ·¢Éú½»»»£¬ÖĞÍ¾½áÊøËã·¨£¬exchange != true »òÕßexchange==false 
+		if (!exchange)  //æœ¬è¶Ÿæ²¡æœ‰å‘ç”Ÿäº¤æ¢ï¼Œä¸­é€”ç»“æŸç®—æ³•ï¼Œexchange != true æˆ–è€…exchange==false 
 			return;                     
 	}
 }
@@ -48,8 +48,8 @@ int main()
 	RecType R[MAXL];
 	KeyType a[]={0,1,7,2,5,4,3,6,8,9};
 	CreateList(R,a,n);
-	printf("ÅÅĞòÇ°:"); DispList(R,n);
+	printf("æ’åºå‰:"); DispList(R,n);
 	BubbleSort(R,n);  
-	printf("ÅÅĞòºó:"); DispList(R,n);
+	printf("æ’åºå:"); DispList(R,n);
 	return 0;
 }
