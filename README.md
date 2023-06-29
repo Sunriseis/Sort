@@ -5,13 +5,13 @@
 
 ![091ce743afeb395db4a86f67b790421](https://github.com/Sunriseis/Sort/assets/135320840/1dd4e5a2-0128-4ff8-aa07-68418cdadb96)
 
-这个 Git 命令是用来配置 Git 的 URL 替换规则。具体来说，git config --global url."https://".insteadOf git:// 的含义是：
-将 Git 协议（git://）的 URL 替换为 HTTPS 协议（https://）的 URL。
-通常情况下，Git 使用不同的协议来获取远程仓库的内容。git:// 是 Git 自带的传输协议，而 https:// 则是基于 HTTP/HTTPS 的协议。
-通过执行上述命令，您告诉 Git 在执行克隆（clone）、拉取（pull）等操作时，将使用 git:// 开头的 URL 替换为以 https:// 开头的 URL。这有助于解决在某些网络环境下使用 git:// 协议受限的问题，因为 https:// 协议通常会更容易通过防火墙或代理服务器。
-请注意，使用 git:// 协议和 https:// 协议连接到远程仓库可能会有一些细微的性能差异和权限要求。根据您的具体情况，可能需要选择适合您的网络环境和需求的协议。
-如果您执行了这个命令，并且您之前使用的是 git:// 协议的 URL，那么之后的 Git 操作将会自动使用 https:// 协议进行连接。
+将 git config --global url."https://".insteadOf git:// 这个命令配置为将 https:// 替换为 git:// 的操作，可能解决了特定的网络或防火墙限制问题。
 
+当您使用 https:// 协议时，Git 使用的是基于 HTTP/HTTPS 的协议进行通信。这种协议通常需要通过防火墙或代理服务器，并且可能受到一些限制或配置要求。如果您的网络环境或防火墙对 https:// 协议进行了限制，那么连接到 GitHub 或其他 Git 服务器可能会失败。
+
+而当您将 https:// 替换为 git://，Git 使用的是 Git 自带的传输协议，它通常使用的是 SSH（Secure Shell）协议或 Git 协议进行通信。这些协议通常不会受到与 https:// 类似的限制，并且在某些网络环境中可以更容易地建立连接。
+
+因此，通过将 https:// 替换为 git://，您可能解决了由于网络或防火墙限制导致的连接问题。但请注意，使用 git:// 协议可能需要适当的配置和权限，以确保正常的操作和访问权限。
 
 
 
