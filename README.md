@@ -1,6 +1,8 @@
 # Sorting Algorithm
 排序算法包括直接插入和冒泡排序
+
 视频地址：https://www.bilibili.com/video/BV1Cr4y1J7iQ/?spm_id_from=333.788&vd_source=48590f4b76fd742be5c46b557c84ddbd
+
 ![091ce743afeb395db4a86f67b790421](https://github.com/Sunriseis/Sort/assets/135320840/1dd4e5a2-0128-4ff8-aa07-68418cdadb96)
 
 这个 Git 命令是用来配置 Git 的 URL 替换规则。具体来说，git config --global url."https://".insteadOf git:// 的含义是：
